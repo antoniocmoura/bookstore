@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4 item-photo">
+            <img class="border" style="max-width:100%;" [src]="book.imageUrl" />
+        </div>
+        <div class="col-5" style="border:0px solid gray">
+
+            <h3 style="color:#337ab7">{{ book.title }}</h3>
+            <h5>{{ book.subtitle }}</h5>
+            <h6>Autor: {{ book.author }}</h6>
+            <h6>Categoria: {{ book.category }}</h6>
+
+            <div class="row section" style="margin-top:20px;">
+                <div class="row" >
+                    <div class="col">
+                        <div class="row">
+                            <h6 class="title-price"><small>PREÇO</small></h6>
+                            <h3 style="margin-top:0px;">{{ book.price | currency:'BRL' }}</h3>
+                        </div>
+                    </div>
+
+                  
+                    <div class="col" >
+                        <div class="row">
+                            <h6 class="title-price"><small>QUANTIDADE</small></h6>
+                            <input [(ngModel)]="quantity" type="number" class="form-control" min="1" pattern="[0-9]" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) " step="1">
+                        </div>
+                    </div>
+
+
+                    <div class="col" style="margin-bottom: 25px;">
+                        <div class="row">
+                            <h6 class="title-price"><small>TOTAL</small></h6>
+                            <h3 style="margin-top:0px;">{{ book.price * quantity | currency:'BRL' }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+           
+            <div class="section" style="padding-bottom:20px;">
+                <button (click)="addBookToCart()" class="btn btn-primary" style="width: 100%;"><span style="margin-right:10px" class="fa fa-shopping-cart" aria-hidden="true"></span> Adicionar ao Carrinho</button>                
+                <button [routerLink]="['/books']" class="btn btn-secondary" style="width: 100%; margin-top: 10px;"><span style="margin-right:10px" class="fa fa-book" aria-hidden="true"></span> Lista de Produtos</button>
+            </div>
+            
+        </div>
+
+        <div class="col-9">
+            <ul class="menu-items">
+                <li class="active">Informações do Produto</li>
+            </ul>
+            <div style="width:100%;border-top:1px solid silver">
+                <p style="padding:15px;">
+                    <small> {{ book.description }}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<td class="col-sm-8 col-md-6">
+    <div class="media d-flex">
+        <a class="thumbnail pull-left" [routerLink]="['/books/' + cartItem.book.id]"> <img class="media-object" [src]="cartItem.book.imageUrl"> </a>
+        <div class="media-body d-flex flex-column ms-2">
+            <span class="media-heading"><a [routerLink]="['/books/' + cartItem.book.id]"><strong>{{ cartItem.book.title }}</strong></a></span>
+            <span class="media-heading">Autor: {{ cartItem.book.author }}</span>
+            <span class="media-heading">Categoria: {{ cartItem.book.category }}</span>
+        </div>
+    </div>
+</td>
+<td class="col-sm-1 col-md-1 quantity">
+    <input [(ngModel)]="cartItem.quantity" type="number" class="form-control" min="1" pattern="[0-9]" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) " step="1">
+</td>
+<td class="col-sm-1 col-md-1 text-end"><strong>{{ cartItem.book.price | currency:'BRL' }}</strong></td>
+<td class="col-sm-1 col-md-1 text-end"><strong>{{ cartItem.book.price * cartItem.quantity | currency:'BRL' }}</strong></td>
+<td class="col-sm-1 col-md-1">
+    <button type="button" class="btn-cart btn btn-danger" (click)="removeItem()">
+        <span class="fa fa-times"></span> Excluir
+    </button>
+</td>

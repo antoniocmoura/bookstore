@@ -1,0 +1,21 @@
+<div class="card shadow-sm">
+
+    <div class="d-flex justify-content-center pt-3">
+        <img class="bd-placeholder-img card-img-top border" [src]="book.imageUrl">
+    </div>
+
+    <div class="card-body">
+        <div class="max-heigth d-flex flex-column">
+            <p class="card-text">{{ book.title }}</p>
+
+            <p class="card-text">Preço: {{ book.price | currency:'BRL' }}</p>
+            <div class="max-heigth d-flex">
+                <div class="max-width btn-group align-items-end">
+                    <button type="button" class="btn btn-sm btn-primary" (click)="addBookToCart(1)"><span class="fa fa-shopping-cart"></span> Adicionar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/books/' + book.id]"><span class="fa fa-info-circle"></span> Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

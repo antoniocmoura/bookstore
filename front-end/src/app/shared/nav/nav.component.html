@@ -1,0 +1,30 @@
+<div class="nav-container d-flex flex-column flex-md-row align-items-center p-2 mb-4 border-bottom">
+    <a [routerLink]="['/books']" class="d-flex align-items-center text-dark text-decoration-none">
+        <app-header></app-header>
+    </a>
+
+    <nav class="d-inline-flex mt-md-0 ms-md-auto align-items-center">
+        
+            <div class="navbar-form" role="search">
+                <div class="input-group">
+                    <input [(ngModel)]="filter" type="text" class="form-control" placeholder="Pesquisar livro..." name="filter">
+                    <div class="input-group-btn">
+                        <button (click)="searchBook()" class="btn-search btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+       
+        <div class="cart-container me-5 d-flex flex-row">
+            <a [routerLink]="['/cart']" class="cart-img">
+                <div class="position-absolute cart-count" *ngIf="cartCount$ > 0">
+                    {{ cartCount$ }}
+                </div>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+        </div>
+        <a class="me-3 text-dark text-decoration-none" [routerLink]="['/books']">Sobre</a>
+        <a class="me-3 text-dark text-decoration-none" [routerLink]="['/books']">Produtos</a>
+        <a class="me-3 text-dark text-decoration-none" [routerLink]="['/books']">Suporte</a>
+    </nav>
+    <a class="btn btn-outline-primary" [routerLink]="['/books']">Entrar</a>
+</div>

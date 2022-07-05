@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="max-width">Livro</th>
+                        <th>Quantidade</th>
+                        <th class="text-end">Preço</th>
+                        <th class="text-end">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr app-cart-item *ngFor="let cartItem of getCartList()" [cartItem]="cartItem">
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <h5>Subtotal</h5>
+                        </td>
+                        <td class="text-end">
+                            <h5><strong>{{ getCartAmmount() | currency:'BRL' }}</strong></h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <h5>Frete</h5>
+                        </td>
+                        <td class="text-end">
+                            <h5><strong>R$ 0.00</strong></h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <h4>Total</h4>
+                        </td>
+                        <td class="text-end">
+                            <h4><strong>{{ getCartAmmount() | currency:'BRL' }}</strong></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <button type="button" class="btn-cart btn btn-primary" [routerLink]="['/books']">
+                                <span class="fa fa-shopping-cart"></span> Lista de Produtos
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-cart btn btn-success" [disabled]="getCartList().length === 0" (click)="checkout()">
+                                <span class="fa fa-check"></span> Finalizar Compra
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+.card {
+    width: 250px;
+    height: 100%;
+    background-color: #fdfdfd;
+}
+
+.card-img-top {
+    height: 250px;
+    width: 175px;
+}

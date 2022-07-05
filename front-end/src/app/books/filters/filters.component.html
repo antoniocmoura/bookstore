@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">Filtro de Preço</div>
+
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="de">De</label>
+                <input [(ngModel)]="minPrice" name="minPrice" type="number" class="form-control" step="0.01">
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="ate">Até</label>
+                <input [(ngModel)]="maxPrice" name="maxPrice" type="number" class="form-control" step="0.01">
+            </div>
+
+            <button (click)="filterPrice()" class="max-width btn btn-outline-primary btn-block btn-sm mt-3"><span class="fa fa-filter"></span> Filtrar Livros</button>
+
+        </form>
+    </div>
+</div>
