@@ -9,6 +9,9 @@ This is a book e-commerce application using Angular.
 ```bash
    # Clone the repository
    $ git clone https://github.com/antoniocmoura/bookstore.git
+   
+   # Enter in folder
+   $ cd bookstore
 ```
 
 ### 📝 Run API 
