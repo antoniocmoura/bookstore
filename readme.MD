@@ -11,7 +11,7 @@ This is a book e-commerce application using Angular.
    $ git clone https://github.com/antoniocmoura/bookstore.git
 
    # Enter the project folder
-   $ cd bookstore
+   $ cd bookstore   
 ```
 
 ### 📝 Run API 
