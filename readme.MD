@@ -39,4 +39,3 @@ This is a book e-commerce application using Angular.
    # Start app
    $ npm start
 ```
-
